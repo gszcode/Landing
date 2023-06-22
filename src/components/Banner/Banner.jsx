@@ -17,7 +17,7 @@ const Banner = () => {
           Aumentá la eficiencia y mejora la experiencia de tus clientes con
           Notimation.
         </p>
-        <Link href="#" className={styles.bannerBtn}>
+        <Link href="#" className={styles.bannerBtn} as="style">
           Conocer más ↓
         </Link>
       </div>

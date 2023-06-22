@@ -25,7 +25,7 @@ const Navbar = () => {
           damping: 20
         }}
       >
-        <Link href="/">
+        <Link href="/" as="style">
           <Image
             src={logo}
             alt="Logo"

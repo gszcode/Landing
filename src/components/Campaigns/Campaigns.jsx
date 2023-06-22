@@ -44,11 +44,11 @@ const Campaigns = () => {
             </motion.div>
           ))}
         </motion.div>
-        <Link href="#" className={styles.btn}>
+        <Link href="#" className={styles.btn} as="style">
           Solicita una prueba
         </Link>
       </section>
-      <Link href="#" className={styles.info}>
+      <Link href="#" className={styles.info} as="style">
         Más información →
       </Link>
     </>
