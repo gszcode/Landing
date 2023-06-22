@@ -1,0 +1,105 @@
+@import '@/app/theme';
+
+.container {
+  @include width-height(100%, 400px);
+  background-size: cover;
+  background-position: center center;
+  background-image: $gradientCampaigns, url('/assets/imageCampaigns.svg');
+  border-radius: $radius;
+  position: relative;
+  padding: 10px;
+  @include dFlex(column, center, center, 40px);
+
+  .span {
+    @include btnCampaign(90px, 45px, 45%, -20px, none, 26px, 700, 40px);
+
+    &::before {
+      content: '';
+      display: block;
+      @include width-height(25px, 17px);
+      border-radius: 10px 10px 0 0;
+      background-color: $buttonColor;
+      position: absolute;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  .title {
+    color: $whiteColor;
+    @include font(40px, 700);
+  }
+
+  .iconContainer {
+    @include dFlex(row, space-between, center, 15px);
+
+    .icon {
+      @include width-height(150px, 150px);
+      background: rgba(82, 141, 255, 0.4);
+      border-radius: $radius;
+      text-align: center;
+      @include dFlex(column, center, center, 10px);
+      @include font(16px, 700);
+      color: $whiteColor;
+      padding: 0 10px;
+    }
+  }
+
+  .btn {
+    @include btnCampaign(400px, 30px, 33%, none, -15px, 17px, 600, 26px);
+    border: 1px solid $transparent;
+    transition: all 300ms linear;
+
+    &:hover {
+      background-color: $whiteColor;
+      border: 1px solid $buttonColor;
+      color: $buttonColor;
+    }
+  }
+
+  // Mobile styles
+  @media (min-width: 200px) and (max-width: 699px) {
+    .iconContainer {
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      .icon {
+        @include width-height(130px, 130px);
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .span {
+      font-size: 23px;
+    }
+
+    .title {
+      @include font(30px, 700);
+    }
+
+    .btn {
+      left: 20%;
+    }
+  }
+}
+
+.info {
+  display: block;
+  width: 150px;
+  margin: 50px auto;
+  color: $blackColor;
+  border-bottom: 1px solid $blackColor;
+  text-align: center;
+
+  &:hover {
+    color: $buttonColor;
+    border-bottom: 1px solid $buttonColor;
+  }
+}

@@ -1,0 +1,65 @@
+// Colors
+$whiteColor: #fff;
+$blackColor: #303030;
+$blueColor: #528dff;
+$buttonColor: #ff5722;
+$transparent: transparent;
+$gradientNavbar: linear-gradient(90deg, #572ded 0%, #528dff 90.69%);
+$gradientCampaigns: linear-gradient(
+  90deg,
+  rgba(87, 45, 237, 0.8) 0%,
+  rgba(82, 141, 255, 0.8) 90.69%
+);
+$gradientForm: linear-gradient(
+  90deg,
+  rgba(87, 45, 237, 0.8) 0%,
+  rgba(217, 217, 217, 0.8) 100%
+);
+
+// Global styles
+$max-width: 1200px;
+$radius: 30px;
+
+// Mixins
+@mixin dFlex($direction, $justify, $align, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin font($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin width-height($width, $height) {
+  width: $width;
+  min-height: $height;
+}
+
+@mixin btnCampaign(
+  $width,
+  $height,
+  $left,
+  $top,
+  $bottom,
+  $fontSize,
+  $weight,
+  $lineHeight
+) {
+  width: $width;
+  height: $height;
+  background-color: $buttonColor;
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  font-size: $fontSize;
+  font-weight: $weight;
+  text-align: center;
+  line-height: $lineHeight;
+  color: $whiteColor;
+  border-radius: 10px;
+}

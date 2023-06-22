@@ -1,0 +1,123 @@
+@import '@/app/theme';
+
+.container {
+  @include width-height(100%, 107px);
+  background: $gradientNavbar;
+  margin: auto;
+  @include dFlex(row, space-between, center);
+  border-radius: $radius;
+  padding: 0 65px;
+  position: relative;
+
+  // Logo styles
+  .imageContainer {
+    @include width-height(285px, 56px);
+
+    .image {
+      @include width-height(100%, 100%);
+      object-fit: cover;
+    }
+  }
+
+  // Menu styles
+  .menuContainer {
+    @include dFlex(row, space-between, center, 25px);
+
+    .item {
+      cursor: pointer;
+      transition: all 500ms;
+      color: $whiteColor;
+      font-weight: 600;
+
+      &:hover {
+        border-bottom: 1px solid $whiteColor;
+      }
+    }
+
+    .lastItem {
+      background-color: $whiteColor;
+      border: 1px solid $transparent;
+      border-radius: $radius;
+      color: $blueColor;
+      font-weight: 600;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 300ms linear;
+
+      &:hover {
+        background-color: $transparent;
+        border: 1px solid $whiteColor;
+        color: $whiteColor;
+      }
+    }
+  }
+
+  .btnMenu,
+  .menuSMContainer,
+  .menuSMContainerNone {
+    display: none;
+  }
+
+  // Mobile styles
+  @media (min-width: 200px) and (max-width: 699px) {
+    justify-content: space-evenly;
+    padding: 0;
+
+    .menuContainer {
+      display: none;
+    }
+
+    .btnMenu {
+      display: block;
+      @include width-height(40px, 40px);
+      color: $whiteColor;
+      cursor: pointer;
+      transition: color 200ms linear;
+
+      &:hover {
+        color: $buttonColor;
+      }
+    }
+    .menuSMContainerNone {
+      display: none;
+    }
+    .menuSMContainer {
+      display: block;
+      position: absolute;
+      top: 80px;
+      left: 0px;
+      @include width-height(100%, 320px);
+      background: $gradientNavbar;
+      padding-top: 30px;
+      z-index: 999;
+      @include dFlex(column, center, center, 0px);
+      transition: all 200ms linear;
+
+      .item,
+      .lastItem {
+        cursor: pointer;
+        transition: all 500ms;
+        color: $whiteColor;
+        font-weight: 600;
+        @include width-height(100%, 45px);
+        line-height: 42px;
+        text-align: center;
+        margin: 5px 0;
+
+        &:hover {
+          background: $buttonColor;
+        }
+      }
+
+      .lastItem {
+        color: $blueColor;
+        background: $whiteColor;
+
+        &:hover {
+          color: $whiteColor;
+          background: $gradientNavbar;
+        }
+      }
+    }
+  }
+}
