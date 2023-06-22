@@ -6,12 +6,12 @@
   background-position: center center;
   background-image: $gradientCampaigns, url('/assets/imageCampaigns.svg');
   border-radius: $radius;
+  padding: 25px 10px;
+  @include dFlex(column, center, center, 25px);
   position: relative;
-  padding: 10px;
-  @include dFlex(column, center, center, 40px);
 
   .span {
-    @include btnCampaign(90px, 45px, 45%, -20px, none, 26px, 700, 40px);
+    @include btnCampaign(90px, 45px, 40%, -20px, none, 26px, 700, 40px);
 
     &::before {
       content: '';
@@ -27,14 +27,16 @@
 
   .title {
     color: $whiteColor;
-    @include font(40px, 700);
+    @include font(24px, 700);
+    margin-top: 15px;
   }
 
   .iconContainer {
-    @include dFlex(row, space-between, center, 15px);
+    @include dFlex(row, space-evenly, center, 15px);
+    flex-wrap: wrap;
 
     .icon {
-      @include width-height(150px, 150px);
+      @include width-height(100px, 100px);
       background: rgba(82, 141, 255, 0.4);
       border-radius: $radius;
       text-align: center;
@@ -42,13 +44,27 @@
       @include font(16px, 700);
       color: $whiteColor;
       padding: 0 10px;
+
+      image {
+        @include width-height(25px, 25px);
+      }
+      p {
+        font-size: 14px;
+      }
     }
   }
 
   .btn {
-    @include btnCampaign(400px, 30px, 33%, none, -15px, 17px, 600, 26px);
+    @include width-height(200px, 30px);
+    background: $buttonColor;
+    color: $whiteColor;
+    border-radius: $radius;
     border: 1px solid $transparent;
     transition: all 300ms linear;
+    text-align: center;
+    line-height: 26px;
+    @include font(17px, 600);
+    margin-bottom: -38px;
 
     &:hover {
       background-color: $whiteColor;
@@ -57,18 +73,31 @@
     }
   }
 
-  // Mobile styles
-  @media (min-width: 200px) and (max-width: 699px) {
+  @media (min-width: 640px) {
+    gap: 40px;
+
+    .span {
+      left: 45%;
+    }
+
+    .btn {
+      margin-bottom: -45px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    gap: 40px;
+
+    .title {
+      @include font(30px, 700);
+    }
+
     .iconContainer {
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-
       .icon {
-        @include width-height(130px, 130px);
+        @include width-height(120px, 120px);
 
-        img {
-          width: 40px;
-          height: 40px;
+        image {
+          @include width-height(30px, 30px);
         }
         p {
           font-size: 16px;
@@ -76,16 +105,36 @@
       }
     }
 
-    .span {
-      font-size: 23px;
+    .btn {
+      width: 250px;
+      position: absolute;
+      bottom: -15px;
+      left: 35%;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .title {
+      @include font(34px, 700);
     }
 
-    .title {
-      @include font(30px, 700);
+    .iconContainer {
+      .icon {
+        @include width-height(150px, 150px);
+
+        image {
+          @include width-height(40px, 40px);
+        }
+        p {
+          font-size: 18px;
+        }
+      }
     }
 
     .btn {
-      left: 20%;
+      width: 400px;
+      left: 34%;
     }
   }
 }

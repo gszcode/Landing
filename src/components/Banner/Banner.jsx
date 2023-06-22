@@ -14,8 +14,8 @@ const Banner = () => {
           <span className={styles.titleSpan}>UN MENSAJE</span>
         </h1>
         <p className={styles.bannerParagraph}>
-          Aumentá la eficiencia y mejora la experiencia de tus clientes con
-          Notimation.
+          Aumentá la eficiencia y mejora la experiencia de tus clientes <br />{' '}
+          con Notimation.
         </p>
         <Link href="#" className={styles.bannerBtn} as="style">
           Conocer más ↓

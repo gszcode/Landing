@@ -10,22 +10,22 @@
   padding: 10px;
 
   .paragraph {
-    font-size: 24px;
+    font-size: 20px;
     color: $whiteColor;
     text-align: center;
   }
 
   .form {
-    padding: 20px;
+    padding: 10px;
     @include dFlex(column, center, center, 20px);
 
     .inputContainer {
       @include dFlex(column, center, flex-start, 5px);
-      @include width-height(450px, 60px);
+      @include width-height(250px, 60px);
 
       label {
         color: $whiteColor;
-        @include font(16px, 600);
+        @include font(14px, 600);
       }
 
       .input {
@@ -33,7 +33,7 @@
         padding: 10px 15px;
         background: rgba(82, 141, 255, 0.3);
         border: 1px solid $whiteColor;
-        @include font(16px, 400);
+        @include font(14px, 400);
         outline: none;
         color: rgba(255, 255, 255, 0.5);
         border-radius: 20px 5px 5px 5px;
@@ -45,14 +45,48 @@
     }
 
     .btn {
-      @include width-height(450px, 40px);
+      @include width-height(250px, 40px);
       background-color: $buttonColor;
-      @include font(16px, 600);
+      @include font(14px, 600);
       text-align: center;
       line-height: 35px;
       color: $whiteColor;
       border-radius: $radius;
       border: none;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .form {
+      .inputContainer,
+      .btn {
+        @include width-height(400px, 40px);
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .paragraph {
+      font-size: 25px;
+    }
+
+    .form {
+      .inputContainer,
+      .btn {
+        @include width-height(450px, 40px);
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .form {
+      .inputContainer,
+      .btn {
+        @include width-height(550px, 40px);
+        font-size: 18px;
+      }
     }
   }
 }

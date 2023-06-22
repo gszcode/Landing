@@ -2,20 +2,17 @@
 
 .container {
   @include width-height(100%, 700px);
-  @include dFlex(row, space-between, center);
+  @include dFlex(column, center, center, 40px);
   padding: 10px;
 
   // Text styles
   .bannerText {
-    @include width-height(600px, auto);
-    margin-left: 50px;
-
+    margin: 50px 0;
     .bannerTitle {
-      font-size: 42px;
-      font-weight: 400;
+      @include font(32px, 400);
 
       .titleSpan {
-        @include font(62px, 700);
+        @include font(50px, 700);
         background: $gradientNavbar;
         background-clip: text;
         color: transparent;
@@ -23,8 +20,7 @@
     }
 
     .bannerParagraph {
-      @include width-height(550px, auto);
-      @include font(20px, 400);
+      @include font(18px, 400);
       margin: 20px 0;
     }
 
@@ -50,22 +46,15 @@
 
   // Image styles
   .bannerImg {
-    @include width-height(440px, 85%);
-    @include dFlex(row, space-between, center, 40px);
+    @include dFlex(column, center, center, 20px);
     position: relative;
+    margin-bottom: 50px;
 
-    img {
-      @include width-height(100%, 100%);
-      object-fit: cover;
-    }
-    .image02 {
-      height: 80%;
-    }
     .bannerPreview {
       @include width-height(125px, 27px);
       position: absolute;
-      top: 50%;
-      left: -124px;
+      top: -30px;
+      right: 10px;
       background: linear-gradient(90deg, #528dff 0%, #572ded 116.38%);
       border-radius: $radius 0 0 $radius;
       padding-left: 20px;
@@ -75,44 +64,75 @@
     }
   }
 
-  // Mobile styles
-  @media (min-width: 200px) and (max-width: 699px) {
-    @include width-height(100%, 700px);
-    @include dFlex(column, space-between, center, 30px);
-    margin: 50px 0;
+  @media (min-width: 640px) {
+    align-items: flex-start;
 
     .bannerText {
-      width: 100%;
-      margin: 0;
+      margin-left: 50px;
 
       .bannerTitle {
-        font-size: 38px;
+        @include font(38px, 400);
 
         .titleSpan {
-          font-size: 58px;
+          @include font(62px, 700);
         }
       }
 
       .bannerParagraph {
-        width: 100%;
-        font-size: 18px;
+        @include font(20px, 400);
       }
     }
 
     .bannerImg {
-      @include dFlex(column, space-between, center, 40px);
+      flex-direction: row;
+      gap: 65px;
+      margin: 0 auto 50px auto;
+    }
+  }
 
-      img {
-        height: 70%;
-      }
-      .image02 {
-        height: 70%;
-      }
+  @media (min-width: 999px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .bannerText {
+      width: 680px;
+      margin-left: 20px;
+    }
+
+    .bannerImg {
+      width: 20%;
+      gap: 15px;
 
       .bannerPreview {
-        top: -28px;
-        left: auto;
-        right: 0;
+        width: 100px;
+        top: 50%;
+        right: auto;
+        left: -290px;
+      }
+    }
+  }
+
+  @media (min-width: 1124px) {
+    .bannerText {
+      width: 835px;
+
+      .bannerTitle {
+        @include font(48px, 400);
+
+        .titleSpan {
+          @include font(64px, 700);
+        }
+      }
+    }
+
+    .bannerImg {
+      width: 10%;
+      gap: 60px;
+
+      .bannerPreview {
+        width: 123px;
+        left: -375px;
       }
     }
   }
