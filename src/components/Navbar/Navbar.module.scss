@@ -1,6 +1,8 @@
 @import '@/app/theme';
 
 .container {
+  max-width: $max-width;
+  margin: 12px auto;
   @include width-height(100%, 107px);
   background: $gradientNavbar;
   border-radius: $radius;
@@ -10,9 +12,11 @@
   // Logo styles
   .imageContainer {
     width: 200px;
+    height: auto;
 
     .image {
       width: 100%;
+      height: auto;
     }
   }
 
