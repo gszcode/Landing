@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Campaigns.module.scss'
-import { icons } from '../../../dataIcon'
+import { icons } from '@/../dataIcon'
 import { motion } from 'framer-motion'
 
 const container = {
