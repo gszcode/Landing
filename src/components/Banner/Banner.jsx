@@ -23,7 +23,12 @@ const Banner = () => {
       </div>
       <div className={styles.bannerImg}>
         <span className={styles.bannerPreview}>Preview</span>
-        <Image src={banner01} alt="Banner 1" className={styles.image01} />
+        <Image
+          src={banner01}
+          alt="Banner 1"
+          className={styles.image01}
+          priority
+        />
         <Image src={banner02} alt="Banner 2" className={styles.image02} />
       </div>
     </section>
