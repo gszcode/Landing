@@ -1,8 +1,10 @@
 @import '@/app/theme';
 
 .container {
+  max-width: 1400px;
   @include width-height(100%, 700px);
   @include dFlex(column, center, center, 40px);
+  margin: 0 auto;
   padding: 10px;
 
   // Text styles
@@ -10,6 +12,7 @@
     margin: 50px 0;
     .bannerTitle {
       @include font(32px, 400);
+      color: #303030;
 
       .titleSpan {
         @include font(50px, 700);
@@ -22,11 +25,12 @@
     .bannerParagraph {
       @include font(18px, 400);
       margin: 20px 0;
+      color: #303030;
     }
 
     .bannerBtn {
       display: block;
-      @include width-height(180px, 40px);
+      @include width-height(160px, 40px);
       border: 1px solid $transparent;
       background-color: $buttonColor;
       color: $whiteColor;
@@ -34,6 +38,7 @@
       text-align: center;
       line-height: 36px;
       @include font(18px, 500);
+      box-shadow: 0 4px 20px 0 #a3a2a2;
       transition: all 300ms linear;
 
       &:hover {
@@ -96,43 +101,76 @@
     align-items: center;
 
     .bannerText {
-      width: 680px;
-      margin-left: 20px;
+      width: 440px;
+      margin-left: 50px;
+
+      .bannerTitle {
+        @include font(30px, 400);
+
+        .titleSpan {
+          @include font(46px, 700);
+        }
+      }
+
+      .bannerParagraph {
+        @include font(17px, 400);
+      }
     }
 
     .bannerImg {
       width: 20%;
       gap: 15px;
+      margin-right: -10px;
+
+      .image01 {
+        width: 230px;
+      }
+      .image02 {
+        width: 190px;
+      }
 
       .bannerPreview {
         width: 100px;
         top: 50%;
         right: auto;
-        left: -290px;
+        left: -222px;
       }
     }
   }
 
   @media (min-width: 1124px) {
     .bannerText {
-      width: 835px;
+      width: 500px;
 
       .bannerTitle {
-        @include font(48px, 400);
+        @include font(35px, 400);
 
         .titleSpan {
-          @include font(64px, 700);
+          @include font(50px, 700);
         }
+      }
+
+      .bannerParagraph {
+        @include font(18px, 400);
       }
     }
 
     .bannerImg {
-      width: 10%;
-      gap: 60px;
+      width: 60%;
+      gap: 50px;
+      margin-right: -240px;
+      margin-bottom: 0;
+
+      .image01 {
+        width: 310px;
+      }
+      .image02 {
+        width: 260px;
+      }
 
       .bannerPreview {
-        width: 123px;
-        left: -375px;
+        width: 120px;
+        left: -52px;
       }
     }
   }
