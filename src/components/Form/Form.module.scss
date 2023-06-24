@@ -1,6 +1,8 @@
 @import '@/app/theme';
 
 .container {
+  max-width: $max-width;
+  margin: 12px auto;
   @include width-height(100%, 700px);
   background-size: cover;
   background-position: center center;
@@ -35,7 +37,7 @@
         border: 1px solid $whiteColor;
         @include font(14px, 400);
         outline: none;
-        color: rgba(255, 255, 255, 0.5);
+        color: $whiteColor;
         border-radius: 20px 5px 5px 5px;
 
         &::placeholder {
@@ -53,6 +55,14 @@
       color: $whiteColor;
       border-radius: $radius;
       border: none;
+      cursor: pointer;
+      transition: all 200ms linear;
+
+      &:hover {
+        background: $whiteColor;
+        border: 1px solid $buttonColor;
+        color: $buttonColor;
+      }
     }
   }
 
@@ -75,7 +85,7 @@
       .inputContainer,
       .btn {
         @include width-height(450px, 40px);
-        font-size: 18px;
+        font-size: 15px;
       }
     }
   }
@@ -85,7 +95,6 @@
       .inputContainer,
       .btn {
         @include width-height(550px, 40px);
-        font-size: 18px;
       }
     }
   }
